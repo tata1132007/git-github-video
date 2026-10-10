@@ -1,17 +1,20 @@
-name: simple project  demo
+name: simple project demo
+
 on:
-    push:
-        branches:
-           - main
+  push:
+    branches:
+      - main
+
 jobs:
-    job1:
-        run-on: ubuntu-latest
-        steps:
-           - name: say Hello
-            run: echo "hello world"
-    job2:
-        needs: job1 
-        runs-on: ubuntu-latest
-        steps:
-         - name: Welcome
-           run: echo "welcome to nu"                        
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: say Hello
+        run: echo "hello world"
+
+  job2:
+    needs: job1 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Welcome
+        run: echo "welcome to nu"             
